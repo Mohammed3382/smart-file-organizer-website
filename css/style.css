@@ -973,6 +973,8 @@ ul { list-style: none; }
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 28px;
+  text-align: left;
+  word-spacing: normal;
 }
 
 .guide-content h3 {
@@ -992,18 +994,19 @@ ul { list-style: none; }
   padding: 0;
 }
 
-.guide-steps li {
+.guide-steps > li {
   counter-increment: guide-step;
-  display: flex;
+  display: grid;
+  grid-template-columns: 24px 1fr;
   gap: 12px;
   font-size: var(--font-sm);
   color: var(--text-secondary);
   line-height: 1.7;
+  text-align: left;
 }
 
-.guide-steps li::before {
+.guide-steps > li::before {
   content: counter(guide-step);
-  flex-shrink: 0;
   width: 24px;
   height: 24px;
   display: flex;
@@ -1014,28 +1017,40 @@ ul { list-style: none; }
   font-size: 11px;
   font-weight: 700;
   border-radius: 50%;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
-.guide-steps li ul {
+.guide-steps > li strong {
+  color: var(--text);
+}
+
+.guide-steps > li ul {
   margin-top: 8px;
   display: flex;
   flex-direction: column;
   gap: 6px;
+  padding-left: 4px;
 }
 
-.guide-steps li ul li {
-  display: list-item;
-  list-style: none;
-  padding-left: 0;
-  gap: 0;
+.guide-steps > li ul li {
+  display: block;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.7;
 }
 
-.guide-steps li ul li::before {
-  content: none;
+.guide-steps > li ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
-.guide-steps li ul li strong {
+.guide-steps > li ul li strong {
   color: var(--text);
 }
 

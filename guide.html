@@ -85,12 +85,12 @@
 
           <h3>How to use it</h3>
           <ol class="guide-steps">
-            <li>Click <strong>Browse</strong> and select a folder you want to organize. The app scans it automatically.</li>
-            <li>Use the filters at the top to narrow down what you see — by file type (Word, PDF, Images, etc.), by name search, or by excluding certain extensions and folders.</li>
-            <li>Choose a <strong>Grouping rule</strong> from the dropdown. This determines how files will be sorted — by file type, extension, naming pattern, folder structure, or date modified.</li>
-            <li>Click <strong>Suggested Folders</strong> to see how the app would organize your files. You can rename any of the suggested group folders.</li>
-            <li>Click <strong>Review Plan</strong> to see exactly where each file will move — old path to new path.</li>
-            <li>Click <strong>Organize Now</strong> to apply the changes. Folders are created automatically, and name collisions are handled safely.</li>
+            <li>Click <strong>Browse</strong> and select a folder. The app scans it automatically.</li>
+            <li>Use the filters to narrow what you see: file type, name search, or excluded extensions and folders.</li>
+            <li>Choose a <strong>Grouping rule</strong> from the dropdown: by file type, by extension, by naming pattern, by folder structure, or by date modified.</li>
+            <li>Click <strong>Suggested Folders</strong> to preview how the app would organize your files. You can rename any of the suggested groups.</li>
+            <li>Click <strong>Review Plan</strong> to see where each file will move, showing the old path and the new path side by side.</li>
+            <li>Click <strong>Organize Now</strong> to apply. Folders are created automatically and name collisions are handled safely.</li>
           </ol>
 
           <div class="guide-example">
@@ -130,17 +130,17 @@
 
           <h3>How to use it</h3>
           <ol class="guide-steps">
-            <li>Browse to a folder and let the scan complete, just like in the Organize section.</li>
-            <li>Check the files you want to rename using the checkboxes in the file list.</li>
+            <li>Browse to a folder and let the scan complete.</li>
+            <li>Check the files you want to rename using the checkboxes.</li>
             <li>Choose a <strong>Rename style</strong> from the dropdown:
               <ul>
-                <li><strong>Keep names readable</strong> — cleans up underscores, extra spaces, and formatting while keeping the original name recognizable.</li>
-                <li><strong>Course code first</strong> — detects course codes (like "CSIT 206") and moves them to the front of the file name.</li>
-                <li><strong>Custom prefix</strong> — replaces all names with a base name you choose, plus sequential numbering.</li>
+                <li><strong>Keep names readable</strong> cleans up underscores, extra spaces, and odd formatting while keeping the original name recognizable.</li>
+                <li><strong>Course code first</strong> detects course codes like "CSIT 206" and moves them to the front of the file name.</li>
+                <li><strong>Custom prefix</strong> replaces all names with a base name you choose, plus sequential numbering.</li>
               </ul>
             </li>
-            <li>Set an optional <strong>Base name</strong> and <strong>Start number</strong> if using custom prefix mode.</li>
-            <li>Click <strong>Review Preview</strong> to see every old name mapped to its new name.</li>
+            <li>Optionally set a <strong>Base name</strong> and <strong>Start number</strong> for custom prefix mode.</li>
+            <li>Click <strong>Review Preview</strong> to see every old name next to its new name.</li>
             <li>Click <strong>Apply Rename</strong> to rename the files.</li>
           </ol>
 
@@ -178,10 +178,10 @@
           <h3>How to use it</h3>
           <ol class="guide-steps">
             <li>Browse to a folder and let the scan complete.</li>
-            <li>Check the files you want to remove.</li>
-            <li>Choose a deletion method: move to the app's <strong>Trash</strong> (recoverable), send to the <strong>Windows Recycle Bin</strong>, or <strong>permanently delete</strong>.</li>
-            <li>Confirm your selection. The app will never delete anything without your explicit approval.</li>
-            <li>To find duplicates, use the <strong>Find Duplicates</strong> option. The app scans file contents (not just names) to identify exact copies, and groups them for your review.</li>
+            <li>Check the files you want to remove using the checkboxes.</li>
+            <li>Choose how to delete: move to the app's <strong>Trash</strong> (recoverable), send to the <strong>Windows Recycle Bin</strong>, or <strong>permanently delete</strong>.</li>
+            <li>Confirm your selection. The app never deletes anything without your explicit approval.</li>
+            <li>To find duplicates, click <strong>Find Duplicates</strong>. The app scans file contents using hashing to identify exact copies, then groups them for your review.</li>
           </ol>
 
           <div class="guide-example">
@@ -216,31 +216,32 @@
           <div class="guide-label">04</div>
           <h2>Delete Apps</h2>
           <p class="guide-desc">
-            The Delete Apps section gives you a complete inventory of installed applications on your system, with the ability to uninstall them and — importantly — scan for leftover files that standard uninstallers often leave behind.
+            The Delete Apps section is a more advanced uninstall and cleanup tool. It gives you a full inventory of installed applications and helps you forcibly remove software that does not always uninstall cleanly through the normal Windows process. After removal, it scans for leftover files that the standard uninstaller missed.
           </p>
 
           <h3>How to use it</h3>
           <ol class="guide-steps">
-            <li>The app automatically loads your installed applications when you open this section, showing the name, version, publisher, source, and install location for each one.</li>
-            <li>Use the <strong>Search</strong> bar to find a specific application.</li>
-            <li>Select an application from the list to see its details.</li>
-            <li>Click <strong>Uninstall Selected App</strong> to run the application's built-in uninstaller.</li>
-            <li>After uninstalling, click <strong>Scan Safe Leftovers</strong> to check for remaining files, cache data, or configuration folders that the uninstaller did not remove.</li>
-            <li>Review the leftover results and decide what to clean up.</li>
+            <li>The app loads your installed applications automatically when you open this section. Each entry shows the application name, version, publisher, source, and install location.</li>
+            <li>Use the search bar to find a specific application by name.</li>
+            <li>Select an application from the list to see its details and available actions.</li>
+            <li>Click <strong>Uninstall Selected App</strong> to trigger the removal. The app can help force the uninstall process when the standard method fails or gets stuck.</li>
+            <li>Use <strong>Check Processes</strong> to see if the application is still running in the background, which can block a clean uninstall.</li>
+            <li>After the uninstall finishes, click <strong>Scan Safe Leftovers</strong> to search for remaining files, cache folders, configuration data, or other remnants the uninstaller did not remove.</li>
+            <li>Review the results and decide what to clean up.</li>
           </ol>
 
           <div class="guide-example">
             <h4>Example</h4>
-            <p>You uninstalled a video editing application months ago using the normal Windows "Add or Remove Programs" method. It seemed to work, but 1.8 GB of cache files, project templates, and configuration folders were left behind in AppData and ProgramData. The leftover scanner finds these and shows you exactly what is still there so you can reclaim that space.</p>
+            <p>You try to uninstall a video editing application through the normal Windows "Add or Remove Programs" method, but the uninstaller throws an error or hangs. You open Smart File Organizer, find the application in the list, and force the uninstall. Afterward, the leftover scanner finds 1.8 GB of cache files, project templates, and configuration folders still sitting in AppData and ProgramData. You review them and clean up what you no longer need.</p>
           </div>
 
           <div class="guide-note">
-            <h4>A note on this feature</h4>
+            <h4>When is this useful?</h4>
             <p>
-              In most cases, the standard Windows uninstall process works fine and removes the main application files properly. This tool does not replace that process — it builds on top of it. Where it adds value is in the cases where leftover files remain after uninstallation: orphaned cache folders, configuration data, log files, or temporary storage that the original uninstaller did not clean up. This is especially common with larger applications, creative tools, and software that stores data in multiple locations across your system.
+              In many cases, the standard Windows uninstall process works fine and removes the application without issues. But not always. Some applications resist removal, throw errors during uninstall, leave background processes running that block the cleanup, or simply fail to remove all of their files. Larger applications, creative software, development tools, and trial software are common offenders.
             </p>
             <p>
-              The leftover scan has three levels — Safe, Medium, and Full — so you can choose how aggressively to search. The Safe level only looks in well-known locations and is appropriate for most situations. The tool gives you full visibility into what it finds, and you decide what to remove. It never deletes anything on its own.
+              This feature helps in those situations by giving you a way to force the uninstall more effectively and then scan for whatever was left behind. The leftover scan has three levels: Safe, Medium, and Full. The Safe level checks well-known locations like AppData and ProgramData and is appropriate for most situations. Medium and Full cast a wider net for deeply embedded remnants. You always see exactly what was found and you decide what to remove. The tool never deletes anything on its own.
             </p>
           </div>
         </div>
