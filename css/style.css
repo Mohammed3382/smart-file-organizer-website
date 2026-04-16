@@ -241,8 +241,8 @@ ul { list-style: none; }
   object-fit: contain;
 }
 
-.nav-active {
-  color: var(--accent-text) !important;
+.navbar-links a.nav-active {
+  color: var(--text);
 }
 
 .navbar-right {
@@ -1038,6 +1038,14 @@ ul { list-style: none; }
 /* ============================================================
    ANIMATIONS
    ============================================================ */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(16px);
@@ -1061,15 +1069,15 @@ ul { list-style: none; }
    RESPONSIVE
    ============================================================ */
 
-/* -- Tablet / half-screen -- */
-@media (max-width: 1024px) {
+/* -- Tablet landscape / half-screen desktop (below 900px) -- */
+@media (max-width: 900px) {
   .hero .container {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
   .hero-title { font-size: var(--font-3xl); }
-  .hero-visual { max-width: 640px; }
+  .hero-visual { max-width: 680px; }
 
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1091,8 +1099,6 @@ ul { list-style: none; }
 
   .story-values { position: static; }
 
-  .download-box { padding: 40px 32px; }
-
   .footer-inner { grid-template-columns: 1fr; gap: 28px; }
 
   .feedback-layout {
@@ -1101,9 +1107,9 @@ ul { list-style: none; }
   }
 }
 
-/* -- Small laptop / narrow -- */
+/* -- Tablet portrait / small laptop (below 768px) -- */
 @media (max-width: 768px) {
-  .navbar-links { gap: 18px; }
+  .navbar-links { gap: 16px; }
 
   .btn-download-nav span { display: none; }
   .btn-download-nav { padding: 7px 10px; }
@@ -1111,15 +1117,17 @@ ul { list-style: none; }
   .hero-title { font-size: var(--font-2xl); }
   .hero-subtitle { font-size: var(--font-base); max-width: 100%; }
 
-  .features-grid { grid-template-columns: 1fr; }
-
   .section-header h2 { font-size: var(--font-2xl); }
+
+  .features-grid { grid-template-columns: 1fr; }
 
   .showcase-text h3 { font-size: var(--font-xl); }
   .story-header h2 { font-size: var(--font-2xl); }
+
+  .download-box { padding: 40px 28px; }
 }
 
-/* -- Mobile -- */
+/* -- Mobile (below 640px) -- */
 @media (max-width: 640px) {
   .container { padding: 0 16px; }
 

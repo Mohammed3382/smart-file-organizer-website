@@ -131,7 +131,53 @@ document.addEventListener('DOMContentLoaded', function () {
   checkVisibility();
 
   // -------------------------------------------------------
-  // Feedback form
+  // Active nav link highlighting
+  // -------------------------------------------------------
+  var allNavLinks = document.querySelectorAll('.navbar-links a');
+  var sections = document.querySelectorAll('section[id]');
+
+  function clearNavActive() {
+    allNavLinks.forEach(function (a) {
+      a.classList.remove('nav-active');
+    });
+  }
+
+  // On scroll, highlight the nav link matching the visible section
+  if (sections.length > 1) {
+    function highlightNav() {
+      var scrollPos = window.scrollY + (navbar ? navbar.offsetHeight : 60) + 120;
+      var found = false;
+
+      // Walk sections bottom-up so deeper sections win
+      for (var i = sections.length - 1; i >= 0; i--) {
+        var section = sections[i];
+        var top = section.offsetTop;
+        var bottom = top + section.offsetHeight;
+        var id = section.getAttribute('id');
+
+        if (scrollPos >= top && scrollPos < bottom) {
+          clearNavActive();
+          var match = document.querySelector('.navbar-links a[href="#' + id + '"]');
+          if (match) {
+            match.classList.add('nav-active');
+          }
+          found = true;
+          break;
+        }
+      }
+
+      // If scrolled past all sections or at top, clear everything
+      if (!found) {
+        clearNavActive();
+      }
+    }
+
+    window.addEventListener('scroll', highlightNav, { passive: true });
+    highlightNav();
+  }
+
+  // -------------------------------------------------------
+  // Feedback form — real submission via FormSubmit.co
   // -------------------------------------------------------
   var feedbackForm = document.getElementById('feedbackForm');
   var feedbackSuccess = document.getElementById('feedbackSuccess');
@@ -141,29 +187,47 @@ document.addEventListener('DOMContentLoaded', function () {
     feedbackForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // Collect form data
+      var submitBtn = feedbackForm.querySelector('.feedback-submit');
+      var originalText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="spin"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2" stroke-dasharray="30 14" stroke-linecap="round"/></svg> Sending...';
+
       var formData = new FormData(feedbackForm);
-      var data = {};
-      formData.forEach(function (value, key) {
-        data[key] = value;
+
+      fetch(feedbackForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function (response) {
+        if (response.ok) {
+          feedbackForm.hidden = true;
+          feedbackSuccess.hidden = false;
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(function () {
+        // Fallback: open mailto with pre-filled data
+        var data = {};
+        formData.forEach(function (value, key) {
+          if (!key.startsWith('_')) data[key] = value;
+        });
+        var subject = encodeURIComponent('[Feedback] ' + (data.subject || 'User Feedback'));
+        var body = encodeURIComponent(
+          'Type: ' + (data.type || 'general') + '\n' +
+          'Name: ' + (data.name || 'Anonymous') + '\n' +
+          'Email: ' + (data.email || 'Not provided') + '\n\n' +
+          (data.message || '')
+        );
+        window.location.href = 'mailto:mohdbibo22@gmail.com?subject=' + subject + '&body=' + body;
+        feedbackForm.hidden = true;
+        feedbackSuccess.hidden = false;
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
       });
-
-      // For now, create a GitHub issue via mailto fallback
-      // since we don't have a form backend yet
-      var subject = encodeURIComponent('[Feedback] ' + (data.subject || 'User Feedback'));
-      var body = encodeURIComponent(
-        'Type: ' + (data.type || 'general') + '\n' +
-        'Name: ' + (data.name || 'Anonymous') + '\n' +
-        'Email: ' + (data.email || 'Not provided') + '\n\n' +
-        (data.message || '')
-      );
-
-      // Open email with pre-filled data
-      window.location.href = 'mailto:mohdbibo22@gmail.com?subject=' + subject + '&body=' + body;
-
-      // Show success state
-      feedbackForm.hidden = true;
-      feedbackSuccess.hidden = false;
     });
   }
 
@@ -173,34 +237,6 @@ document.addEventListener('DOMContentLoaded', function () {
       feedbackForm.hidden = false;
       feedbackSuccess.hidden = true;
     });
-  }
-
-  // -------------------------------------------------------
-  // Active nav link highlighting (index page only)
-  // -------------------------------------------------------
-  var sections = document.querySelectorAll('section[id]');
-  var navAnchors = document.querySelectorAll('.navbar-links a:not(.btn-download-nav)');
-
-  if (sections.length > 1) {
-    function highlightNav() {
-      var scrollPos = window.scrollY + (navbar ? navbar.offsetHeight : 60) + 100;
-
-      sections.forEach(function (section) {
-        var top = section.offsetTop;
-        var height = section.offsetHeight;
-        var id = section.getAttribute('id');
-
-        if (scrollPos >= top && scrollPos < top + height) {
-          navAnchors.forEach(function (a) { a.style.color = ''; });
-          var active = document.querySelector('.navbar-links a[href="#' + id + '"]');
-          if (active) {
-            active.style.color = 'var(--text)';
-          }
-        }
-      });
-    }
-
-    window.addEventListener('scroll', highlightNav, { passive: true });
   }
 
 });

@@ -85,7 +85,13 @@
         </div>
 
         <div class="feedback-form-wrapper">
-          <form class="feedback-form" id="feedbackForm" action="https://formspree.io/f/placeholder" method="POST">
+          <form class="feedback-form" id="feedbackForm" action="https://formsubmit.co/mohdbibo22@gmail.com" method="POST">
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="New feedback — Smart File Organizer">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <!-- _next not needed: we handle response via fetch/JS -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-group">
               <label for="feedbackType">Type</label>
               <select id="feedbackType" name="type" required>
