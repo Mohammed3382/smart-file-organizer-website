@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guide — Smart File Organizer</title>
+  <meta name="description" content="Learn how to use Smart File Organizer — step-by-step guide for organizing, renaming, deleting files, uninstalling apps, and analyzing disk usage.">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <img src="assets/app-icon.png" alt="" class="navbar-logo" width="28" height="28">
+        <span>Smart File Organizer</span>
+      </a>
+      <div class="navbar-right">
+        <ul class="navbar-links" id="navLinks">
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="guide.html" class="nav-active">Guide</a></li>
+          <li><a href="index.html#story">About</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+        <a href="https://github.com/Mohammed3382/smart-file-organizer/releases/download/v1.0.0/SmartFileOrganizer_Setup_1.0.0.exe" class="btn btn-download-nav" download>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v8m0 0L5 7m3 3l3-3M3 12v.5A1.5 1.5 0 004.5 14h7a1.5 1.5 0 001.5-1.5V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Download</span>
+        </a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M9 1v2M9 15v2M1 9h2M15 9h2M3.3 3.3l1.4 1.4M13.3 13.3l1.4 1.4M3.3 14.7l1.4-1.4M13.3 4.7l1.4-1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="navbar-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       GUIDE HERO
+       ============================================================ -->
+  <section class="guide-hero">
+    <div class="container">
+      <h1>User Guide</h1>
+      <p>A clear, step-by-step walkthrough of every tool in Smart File Organizer. Learn how each feature works and how to get the most out of it.</p>
+      <nav class="guide-toc">
+        <a href="#guide-organize">Organize Files</a>
+        <a href="#guide-rename">Rename Files</a>
+        <a href="#guide-delete">Delete Files</a>
+        <a href="#guide-apps">Delete Apps</a>
+        <a href="#guide-disk">Disk Analyzer</a>
+        <a href="#guide-settings">Settings</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ORGANIZE FILES
+       ============================================================ -->
+  <section class="guide-section" id="guide-organize">
+    <div class="container">
+      <div class="guide-block">
+        <div class="guide-screenshot">
+          <div class="screenshot-frame">
+            <div class="screenshot-bar">
+              <div class="screenshot-dots"><span></span><span></span><span></span></div>
+              <span class="screenshot-bar-title">Organize Files</span>
+            </div>
+            <img src="assets/screenshot-organize.png" data-dark="assets/screenshot-organize.png" data-light="assets/screenshot-organize-light.png" alt="Organize Files view" class="screenshot-img themed-img" loading="lazy">
+          </div>
+        </div>
+        <div class="guide-content">
+          <div class="guide-label">01</div>
+          <h2>Organize Files</h2>
+          <p class="guide-desc">
+            The Organize section is the core of the application. It scans any folder on your computer, lists every file with its type, size, and location, and helps you sort them into clean, organized groups — all with a full preview before anything moves.
+          </p>
+
+          <h3>How to use it</h3>
+          <ol class="guide-steps">
+            <li>Click <strong>Browse</strong> and select a folder you want to organize. The app scans it automatically.</li>
+            <li>Use the filters at the top to narrow down what you see — by file type (Word, PDF, Images, etc.), by name search, or by excluding certain extensions and folders.</li>
+            <li>Choose a <strong>Grouping rule</strong> from the dropdown. This determines how files will be sorted — by file type, extension, naming pattern, folder structure, or date modified.</li>
+            <li>Click <strong>Suggested Folders</strong> to see how the app would organize your files. You can rename any of the suggested group folders.</li>
+            <li>Click <strong>Review Plan</strong> to see exactly where each file will move — old path to new path.</li>
+            <li>Click <strong>Organize Now</strong> to apply the changes. Folders are created automatically, and name collisions are handled safely.</li>
+          </ol>
+
+          <div class="guide-example">
+            <h4>Example</h4>
+            <p>Your Downloads folder has 200 files — PDFs, images, Word documents, installers, and zip files all mixed together. You open it in the app, choose "By file type" grouping, and in one click the app sorts everything into Documents, Images, Videos, and Other folders. Before anything moves, you see the full preview and confirm.</p>
+          </div>
+
+          <div class="guide-tip">
+            <strong>Tip:</strong> If you make a mistake, use the <strong>Undo</strong> button to restore all files to their original locations from the last operation.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RENAME FILES
+       ============================================================ -->
+  <section class="guide-section alt" id="guide-rename">
+    <div class="container">
+      <div class="guide-block reverse">
+        <div class="guide-screenshot">
+          <div class="screenshot-frame">
+            <div class="screenshot-bar">
+              <div class="screenshot-dots"><span></span><span></span><span></span></div>
+              <span class="screenshot-bar-title">Rename Files</span>
+            </div>
+            <img src="assets/screenshot-rename.png" data-dark="assets/screenshot-rename.png" data-light="assets/screenshot-rename-light.png" alt="Rename Files view" class="screenshot-img themed-img" loading="lazy">
+          </div>
+        </div>
+        <div class="guide-content">
+          <div class="guide-label">02</div>
+          <h2>Rename Files</h2>
+          <p class="guide-desc">
+            The Rename section lets you fix messy, inconsistent file names across dozens or hundreds of files at once. Instead of renaming files one by one, you select a rename style, configure it, and apply it in bulk — with a full preview of every change before anything is renamed.
+          </p>
+
+          <h3>How to use it</h3>
+          <ol class="guide-steps">
+            <li>Browse to a folder and let the scan complete, just like in the Organize section.</li>
+            <li>Check the files you want to rename using the checkboxes in the file list.</li>
+            <li>Choose a <strong>Rename style</strong> from the dropdown:
+              <ul>
+                <li><strong>Keep names readable</strong> — cleans up underscores, extra spaces, and formatting while keeping the original name recognizable.</li>
+                <li><strong>Course code first</strong> — detects course codes (like "CSIT 206") and moves them to the front of the file name.</li>
+                <li><strong>Custom prefix</strong> — replaces all names with a base name you choose, plus sequential numbering.</li>
+              </ul>
+            </li>
+            <li>Set an optional <strong>Base name</strong> and <strong>Start number</strong> if using custom prefix mode.</li>
+            <li>Click <strong>Review Preview</strong> to see every old name mapped to its new name.</li>
+            <li>Click <strong>Apply Rename</strong> to rename the files.</li>
+          </ol>
+
+          <div class="guide-example">
+            <h4>Example</h4>
+            <p>You downloaded 40 lecture slides named things like "Lecture_03__CSIT206_final (1).pptx". You select them all, choose "Course code first" rename style, and the app renames them to clean names like "CSIT 206 — Lecture 03.pptx". You see the full before-and-after preview, confirm, and it is done in seconds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DELETE FILES
+       ============================================================ -->
+  <section class="guide-section" id="guide-delete">
+    <div class="container">
+      <div class="guide-block">
+        <div class="guide-screenshot">
+          <div class="screenshot-frame">
+            <div class="screenshot-bar">
+              <div class="screenshot-dots"><span></span><span></span><span></span></div>
+              <span class="screenshot-bar-title">Delete Files</span>
+            </div>
+            <img src="assets/screenshot-delete-files.png" data-dark="assets/screenshot-delete-files.png" data-light="assets/screenshot-delete-files-light.png" alt="Delete Files view" class="screenshot-img themed-img" loading="lazy">
+          </div>
+        </div>
+        <div class="guide-content">
+          <div class="guide-label">03</div>
+          <h2>Delete Files</h2>
+          <p class="guide-desc">
+            The Delete section helps you safely remove files you no longer need. It includes a managed Trash system so deleted files can be restored, and a duplicate detection tool that finds files with identical contents using SHA-256 hashing — regardless of what the files are named.
+          </p>
+
+          <h3>How to use it</h3>
+          <ol class="guide-steps">
+            <li>Browse to a folder and let the scan complete.</li>
+            <li>Check the files you want to remove.</li>
+            <li>Choose a deletion method: move to the app's <strong>Trash</strong> (recoverable), send to the <strong>Windows Recycle Bin</strong>, or <strong>permanently delete</strong>.</li>
+            <li>Confirm your selection. The app will never delete anything without your explicit approval.</li>
+            <li>To find duplicates, use the <strong>Find Duplicates</strong> option. The app scans file contents (not just names) to identify exact copies, and groups them for your review.</li>
+          </ol>
+
+          <div class="guide-example">
+            <h4>Example</h4>
+            <p>Over the past year you have downloaded the same PDF attachment from email five times. The files have different names like "report.pdf", "report (1).pdf", and "report_final.pdf" — but the content is identical. The duplicate finder detects all five, groups them, and lets you decide which copies to keep and which to remove.</p>
+          </div>
+
+          <div class="guide-tip">
+            <strong>Tip:</strong> The app never deletes duplicates automatically. It shows you the groups and you choose what to do with them. Locked or in-use files are skipped gracefully with a warning instead of causing an error.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DELETE APPS
+       ============================================================ -->
+  <section class="guide-section alt" id="guide-apps">
+    <div class="container">
+      <div class="guide-block reverse">
+        <div class="guide-screenshot">
+          <div class="screenshot-frame">
+            <div class="screenshot-bar">
+              <div class="screenshot-dots"><span></span><span></span><span></span></div>
+              <span class="screenshot-bar-title">Delete Apps</span>
+            </div>
+            <img src="assets/screenshot-delete-apps.png" data-dark="assets/screenshot-delete-apps.png" data-light="assets/screenshot-delete-apps-light.png" alt="Delete Apps view" class="screenshot-img themed-img" loading="lazy">
+          </div>
+        </div>
+        <div class="guide-content">
+          <div class="guide-label">04</div>
+          <h2>Delete Apps</h2>
+          <p class="guide-desc">
+            The Delete Apps section gives you a complete inventory of installed applications on your system, with the ability to uninstall them and — importantly — scan for leftover files that standard uninstallers often leave behind.
+          </p>
+
+          <h3>How to use it</h3>
+          <ol class="guide-steps">
+            <li>The app automatically loads your installed applications when you open this section, showing the name, version, publisher, source, and install location for each one.</li>
+            <li>Use the <strong>Search</strong> bar to find a specific application.</li>
+            <li>Select an application from the list to see its details.</li>
+            <li>Click <strong>Uninstall Selected App</strong> to run the application's built-in uninstaller.</li>
+            <li>After uninstalling, click <strong>Scan Safe Leftovers</strong> to check for remaining files, cache data, or configuration folders that the uninstaller did not remove.</li>
+            <li>Review the leftover results and decide what to clean up.</li>
+          </ol>
+
+          <div class="guide-example">
+            <h4>Example</h4>
+            <p>You uninstalled a video editing application months ago using the normal Windows "Add or Remove Programs" method. It seemed to work, but 1.8 GB of cache files, project templates, and configuration folders were left behind in AppData and ProgramData. The leftover scanner finds these and shows you exactly what is still there so you can reclaim that space.</p>
+          </div>
+
+          <div class="guide-note">
+            <h4>A note on this feature</h4>
+            <p>
+              In most cases, the standard Windows uninstall process works fine and removes the main application files properly. This tool does not replace that process — it builds on top of it. Where it adds value is in the cases where leftover files remain after uninstallation: orphaned cache folders, configuration data, log files, or temporary storage that the original uninstaller did not clean up. This is especially common with larger applications, creative tools, and software that stores data in multiple locations across your system.
+            </p>
+            <p>
+              The leftover scan has three levels — Safe, Medium, and Full — so you can choose how aggressively to search. The Safe level only looks in well-known locations and is appropriate for most situations. The tool gives you full visibility into what it finds, and you decide what to remove. It never deletes anything on its own.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DISK ANALYZER
+       ============================================================ -->
+  <section class="guide-section" id="guide-disk">
+    <div class="container">
+      <div class="guide-block">
+        <div class="guide-screenshot">
+          <div class="screenshot-frame">
+            <div class="screenshot-bar">
+              <div class="screenshot-dots"><span></span><span></span><span></span></div>
+              <span class="screenshot-bar-title">Disk Analyzer</span>
+            </div>
+            <img src="assets/screenshot-disk-analyzer.png" data-dark="assets/screenshot-disk-analyzer.png" data-light="assets/screenshot-disk-analyzer-light.png" alt="Disk Analyzer view" class="screenshot-img themed-img" loading="lazy">
+          </div>
+        </div>
+        <div class="guide-content">
+          <div class="guide-label">05</div>
+          <h2>Disk Analyzer</h2>
+          <p class="guide-desc">
+            The Disk Analyzer scans any folder or drive and shows you exactly what is taking up space — sorted by size from largest to smallest. Instead of guessing where your storage went, you get a clear, actionable breakdown.
+          </p>
+
+          <h3>How to use it</h3>
+          <ol class="guide-steps">
+            <li>Click <strong>Browse</strong> and select a folder or drive to analyze.</li>
+            <li>Click <strong>Analyze</strong> to start the scan. The app calculates the size of every subfolder.</li>
+            <li>Results are displayed in a table sorted by size, with the percentage of total space each folder uses and a visual usage bar.</li>
+            <li>Click <strong>Open in Explorer</strong> to open the folder directly in Windows Explorer so you can inspect or clean it up.</li>
+          </ol>
+
+          <div class="guide-example">
+            <h4>Example</h4>
+            <p>Your C: drive is nearly full and you are not sure why. You point the Disk Analyzer at "C:\Users\YourName" and within seconds you can see that the AppData folder is using 34 GB, your Downloads folder has 12 GB of old files, and a forgotten game backup folder is sitting at 28 GB. Now you know exactly where to free up space.</p>
+          </div>
+
+          <div class="guide-tip">
+            <strong>Tip:</strong> Start with a broad scan (like your entire user folder) to identify the biggest consumers, then drill into specific folders to find the files you can remove.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SETTINGS
+       ============================================================ -->
+  <section class="guide-section alt" id="guide-settings">
+    <div class="container">
+      <div class="guide-block reverse">
+        <div class="guide-screenshot">
+          <div class="screenshot-frame">
+            <div class="screenshot-bar">
+              <div class="screenshot-dots"><span></span><span></span><span></span></div>
+              <span class="screenshot-bar-title">Settings</span>
+            </div>
+            <img src="assets/screenshot-settings.png" data-dark="assets/screenshot-settings.png" data-light="assets/screenshot-settings-light.png" alt="Settings view" class="screenshot-img themed-img" loading="lazy">
+          </div>
+        </div>
+        <div class="guide-content">
+          <div class="guide-label">06</div>
+          <h2>Settings</h2>
+          <p class="guide-desc">
+            The Settings section lets you customize the appearance and default behavior of the application. Changes are saved automatically and applied immediately — no restart required.
+          </p>
+
+          <h3>Available options</h3>
+          <ul class="guide-options">
+            <li>
+              <strong>Theme</strong> — Switch between Dark and Light mode. Dark mode is the default utility theme; Light mode provides a brighter workspace if you prefer it.
+            </li>
+            <li>
+              <strong>Show subfolders in the list</strong> — When enabled, subfolder names appear in the file list alongside files. Useful for seeing the full folder structure.
+            </li>
+            <li>
+              <strong>Show files only</strong> — Hides subfolders from the work lists so you only see files.
+            </li>
+            <li>
+              <strong>Ignore common system folders</strong> — Automatically skips folders like "node_modules", ".git", and other system directories that you typically do not want to organize.
+            </li>
+            <li>
+              <strong>Exclude zip and archive files by default</strong> — Keeps zip files out of the scan results unless you specifically include them.
+            </li>
+            <li>
+              <strong>Restore Default Settings</strong> — Resets everything back to the original defaults with one click.
+            </li>
+          </ul>
+
+          <div class="guide-tip">
+            <strong>Tip:</strong> Settings are isolated from the file workflows. You can adjust them at any time without affecting an ongoing scan or operation.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/app-icon.png" alt="" class="navbar-logo" width="24" height="24">
+            Smart File Organizer
+          </a>
+          <p>A desktop utility for managing files, cleaning up your system, and keeping everything in order.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="guide.html">Guide</a></li>
+              <li><a href="index.html#download">Download</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>More</h4>
+            <ul>
+              <li><a href="index.html#story">About</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+              <li><a href="mailto:mohdbibo22@gmail.com">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Smart File Organizer. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
