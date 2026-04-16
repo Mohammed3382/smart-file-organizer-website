@@ -950,6 +950,12 @@ ul { list-style: none; }
 .guide-screenshot {
   position: sticky;
   top: 80px;
+  min-width: 0;
+}
+
+.guide-content {
+  min-width: 0;
+  overflow: hidden;
 }
 
 .guide-label {
@@ -987,28 +993,31 @@ ul { list-style: none; }
 .guide-steps {
   list-style: none;
   counter-reset: guide-step;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 28px;
+  margin: 0 0 28px 0;
   padding: 0;
 }
 
 .guide-steps > li {
   counter-increment: guide-step;
-  display: grid;
-  grid-template-columns: 24px 1fr;
-  gap: 12px;
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: 14px;
   font-size: var(--font-sm);
   color: var(--text-secondary);
-  line-height: 1.7;
-  text-align: left;
+  line-height: 1.75;
+}
+
+.guide-steps > li:last-child {
+  padding-bottom: 0;
 }
 
 .guide-steps > li::before {
   content: counter(guide-step);
-  width: 24px;
-  height: 24px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 26px;
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1017,29 +1026,32 @@ ul { list-style: none; }
   font-size: 11px;
   font-weight: 700;
   border-radius: 50%;
-  margin-top: 2px;
 }
 
 .guide-steps > li strong {
   color: var(--text);
 }
 
-.guide-steps > li ul {
-  margin-top: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-left: 4px;
+.guide-steps > li > ul {
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
 }
 
-.guide-steps > li ul li {
-  display: block;
-  padding-left: 14px;
+.guide-steps > li > ul > li {
   position: relative;
-  line-height: 1.7;
+  padding-left: 16px;
+  padding-bottom: 6px;
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  line-height: 1.75;
 }
 
-.guide-steps > li ul li::before {
+.guide-steps > li > ul > li:last-child {
+  padding-bottom: 0;
+}
+
+.guide-steps > li > ul > li::before {
   content: '';
   position: absolute;
   left: 0;
@@ -1050,7 +1062,7 @@ ul { list-style: none; }
   background: var(--accent);
 }
 
-.guide-steps > li ul li strong {
+.guide-steps > li > ul > li strong {
   color: var(--text);
 }
 
@@ -1060,19 +1072,23 @@ ul { list-style: none; }
   border-left: 3px solid var(--accent);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .guide-example h4 {
   font-size: var(--font-sm);
   font-weight: 600;
   color: var(--accent-text);
-  margin-bottom: 6px;
+  margin: 0 0 6px 0;
 }
 
 .guide-example p {
   font-size: var(--font-sm);
   color: var(--text-secondary);
   line-height: 1.75;
+  margin: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .guide-tip {
@@ -1082,8 +1098,11 @@ ul { list-style: none; }
   border-radius: var(--radius-md);
   font-size: var(--font-sm);
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.75;
   box-shadow: var(--card-shadow);
+  margin-bottom: 20px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .guide-tip strong {
@@ -1097,20 +1116,23 @@ ul { list-style: none; }
   border-radius: var(--radius-md);
   box-shadow: var(--card-shadow);
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .guide-note h4 {
   font-size: var(--font-sm);
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
 }
 
 .guide-note p {
   font-size: var(--font-sm);
   color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 12px;
+  line-height: 1.75;
+  margin: 0 0 12px 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .guide-note p:last-child {
@@ -1118,22 +1140,25 @@ ul { list-style: none; }
 }
 
 .guide-options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 24px;
+  list-style: none;
+  margin: 0 0 24px 0;
   padding: 0;
 }
 
-.guide-options li {
+.guide-options > li {
+  position: relative;
+  padding-left: 16px;
+  padding-bottom: 12px;
   font-size: var(--font-sm);
   color: var(--text-secondary);
-  line-height: 1.7;
-  padding-left: 16px;
-  position: relative;
+  line-height: 1.75;
 }
 
-.guide-options li::before {
+.guide-options > li:last-child {
+  padding-bottom: 0;
+}
+
+.guide-options > li::before {
   content: '';
   position: absolute;
   left: 0;
@@ -1144,7 +1169,7 @@ ul { list-style: none; }
   background: var(--accent);
 }
 
-.guide-options li strong {
+.guide-options > li strong {
   color: var(--text);
 }
 
